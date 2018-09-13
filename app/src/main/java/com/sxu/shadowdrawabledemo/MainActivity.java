@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 		ShadowDrawable.setShadowDrawable(textView4, ShadowDrawable.SHAPE_CIRCLE, Color.parseColor("#1DE9B6"),
 				0, Color.parseColor("#99FF3D00"), dpToPx(8), 0, 0);
 		ShadowDrawable.setShadowDrawable(textView5, ShadowDrawable.SHAPE_CIRCLE, Color.parseColor("#FF3D00"),
-				dpToPx(8), Color.parseColor("#991DE9B6"), dpToPx(6), dpToPx(4), dpToPx(4));
+				dpToPx(8), Color.parseColor("#fe00ff00"), dpToPx(6), dpToPx(4), dpToPx(4));
 	}
 
 	private int dpToPx(int dp) {
