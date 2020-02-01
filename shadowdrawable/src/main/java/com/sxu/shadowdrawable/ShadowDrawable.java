@@ -11,6 +11,7 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewCompat;
@@ -96,6 +97,15 @@ public class ShadowDrawable extends Drawable {
 		ViewCompat.setBackground(view, drawable);
 	}
 
+	/**
+	 * 为指定View添加阴影
+	 * @param view 目标View
+	 * @param shapeRadius View的圆角
+	 * @param shadowColor 阴影的颜色
+	 * @param shadowRadius 阴影的宽度
+	 * @param offsetX 阴影水平方向的偏移量
+	 * @param offsetY 阴影垂直方向的偏移量
+	 */
 	public static void setShadowDrawable(View view, int shapeRadius, int shadowColor, int shadowRadius, int offsetX, int offsetY) {
 		ShadowDrawable drawable = new ShadowDrawable.Builder()
 				.setShapeRadius(shapeRadius)
@@ -108,6 +118,16 @@ public class ShadowDrawable extends Drawable {
 		ViewCompat.setBackground(view, drawable);
 	}
 
+	/**
+	 * 为指定View设置带阴影的背景
+	 * @param view 目标View
+	 * @param bgColor View背景色
+	 * @param shapeRadius View的圆角
+	 * @param shadowColor 阴影的颜色
+	 * @param shadowRadius 阴影的宽度
+	 * @param offsetX 阴影水平方向的偏移量
+	 * @param offsetY 阴影垂直方向的偏移量
+	 */
 	public static void setShadowDrawable(View view, int bgColor, int shapeRadius, int shadowColor, int shadowRadius, int offsetX, int offsetY) {
 		ShadowDrawable drawable = new ShadowDrawable.Builder()
 				.setBgColor(bgColor)
@@ -121,6 +141,17 @@ public class ShadowDrawable extends Drawable {
 		ViewCompat.setBackground(view, drawable);
 	}
 
+	/**
+	 * 为指定View设置指定形状并带阴影的背景
+	 * @param view 目标View
+	 * @param shape View的形状 取值可为：GradientDrawable.RECTANGLE， GradientDrawable.OVAL， GradientDrawable.RING
+	 * @param bgColor View背景色
+	 * @param shapeRadius View的圆角
+	 * @param shadowColor 阴影的颜色
+	 * @param shadowRadius 阴影的宽度
+	 * @param offsetX 阴影水平方向的偏移量
+	 * @param offsetY 阴影垂直方向的偏移量
+	 */
 	public static void setShadowDrawable(View view, int shape, int bgColor, int shapeRadius, int shadowColor, int shadowRadius, int offsetX, int offsetY) {
 		ShadowDrawable drawable = new ShadowDrawable.Builder()
 				.setShape(shape)
@@ -135,6 +166,16 @@ public class ShadowDrawable extends Drawable {
 		ViewCompat.setBackground(view, drawable);
 	}
 
+	/**
+	 * 为指定View设置带阴影的渐变背景
+	 * @param view
+	 * @param bgColor
+	 * @param shapeRadius
+	 * @param shadowColor
+	 * @param shadowRadius
+	 * @param offsetX
+	 * @param offsetY
+	 */
 	public static void setShadowDrawable(View view, int[] bgColor, int shapeRadius, int shadowColor, int shadowRadius, int offsetX, int offsetY) {
 		ShadowDrawable drawable = new ShadowDrawable.Builder()
 				.setBgColor(bgColor)
@@ -153,8 +194,8 @@ public class ShadowDrawable extends Drawable {
 		private int mShapeRadius;
 		private int mShadowColor;
 		private int mShadowRadius;
-		private int mOffsetX = 0;
-		private int mOffsetY = 0;
+		private int mOffsetX;
+		private int mOffsetY;
 		private int[] mBgColor;
 
 		public Builder() {

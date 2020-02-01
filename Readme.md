@@ -1,6 +1,6 @@
-[![](https://jitpack.io/v/JuHonggang/ShadowDrawable.svg)](https://jitpack.io/#JuHonggang/ShadowDrawable)
+[![image](https://jitpack.io/v/Liberuman/ShadowDrawable.svg)](https://jitpack.io/#JuHonggang/ShadowDrawable)
 ![image](https://img.shields.io/badge/build-passing-brightgreen.svg)
-[![image](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/JuHonggang/ShadowDrawable/blob/master/LICENSE)
+[![image](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Liberuman/ShadowDrawable/blob/master/LICENSE)
 
 
 #### 添加依赖
@@ -17,22 +17,37 @@
 在APP模块下的build.gradle中添加依赖：
 
     dependencies {
-        implementation 'com.github.JuHonggang:ShadowDrawable:0.1'
+        implementation 'com.github.Liberuman:ShadowDrawable:0.1'
     }
 
 #### 使用
 
 通过一行代码即可实现阴影效果
 
+    /**
+	 * 为指定View设置带阴影的背景
+	 * @param view 目标View
+	 * @param bgColor View背景色
+	 * @param shapeRadius View的圆角
+	 * @param shadowColor 阴影的颜色
+	 * @param shadowRadius 阴影的宽度
+	 * @param offsetX 阴影水平方向的偏移量
+	 * @param offsetY 阴影垂直方向的偏移量
+	 */
+	public static void setShadowDrawable(View view, int bgColor, int shapeRadius, int shadowColor, int shadowRadius, int offsetX, int offsetY);
+	
+	// 实例：设置背景为颜色为#3D5AFE，圆角为8dp, 阴影颜色为#66000000，宽度为10dp的背景
     ShadowDrawable.setShadowDrawable(textView1, Color.parseColor("#3D5AFE"), dpToPx(8),
         Color.parseColor("#66000000"), dpToPx(10), 0, 0);
 
 详细介绍可参考：[Android开发中阴影效果的实现](
-http://tinycoder.cc/2018/04/26/Android%E5%BC%80%E5%8F%91%E4%B8%AD%E9%98%B4%E5%BD%B1%E6%95%88%E6%9E%9C%E7%9A%84%E5%AE%9E%E7%8E%B0/)
+https://juejin.im/post/5ae1ba4d6fb9a07acc116b8d)
 
 #### 阴影效果
 
-![image](http://od186sz8s.bkt.clouddn.com/shadow.jpg)
+![image](./app/src/main/assets/effect.jpeg)
+![image](./app/src/main/assets/effect2.jpeg)
+![image](./app/src/main/assets/effect3.jpeg)
 
 #### License
 
